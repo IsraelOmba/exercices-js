@@ -69,3 +69,42 @@ function sumAndProductArray(table){
 }
 const ourTable = [2,5,4,6,8,0];
 sumAndProductArray(ourTable);
+
+// question 7 : Write a JavaScript program to sort the items of an array.
+function sortArray(table){
+    const myTable = table;
+
+    let contientNumerique = false;
+    let contientChaine = false;
+  
+    for (let i = 0; i < myTable.length; i++) {
+      if (typeof myTable[i] === 'number') {
+        contientNumerique = true;
+      } else if (typeof myTable[i] === 'string') {
+        contientChaine = true;
+      }
+  
+      // Si les deux types sont déjà détectés, on peut sortir de la boucle
+      if (contientNumerique && contientChaine) {
+        break;
+      }
+    }
+  
+    if (contientNumerique && contientChaine) {
+      console.log("Le tableau contient à la fois des éléments numériques et des chaînes.");
+    }
+    else if (contientNumerique) {
+        myTable.sort((a,b) => a-b);
+    }
+    else if (contientChaine) {
+        myTable.sort((a,b) => a.localeCompare(b));
+    }
+    else {
+      console.log("Le tableau est vide ou ne contient aucun élément.");
+    }
+    
+    console.log(myTable);
+}
+const tbl =[89,9,5,34,2,8,1,21];
+// const tbl =["omba","pembe","ekete","oshisha"];
+sortArray(tbl);
