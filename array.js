@@ -20,4 +20,37 @@ function nElementArray(table, n){
 firstElementArray(eleve);
 nElementArray(eleve,3);
 
-// question 3 :
+// question 3 : Write a JavaScript function to get the last element of an array. Passing the parameter 'n' will return the last 'n' elements of the array.
+function lastElementArray(table){
+    const firstElement = table.pop();
+    console.log(firstElement);
+}
+function nLastElementArray(table, n){
+    const nElement = table.slice(-n);
+    console.log(nElement);
+}
+
+lastElementArray(eleve);
+nLastElementArray(eleve,2);
+
+// question 4 : Write a simple JavaScript program to join all elements of the following array into a string.
+function joinAllElement(table){
+    const myTable = table.join();
+    console.log(myTable);
+}
+
+const arraymyColor = ["Red", "Green", "White", "Black"];
+joinAllElement(arraymyColor);
+
+// question 5 : Write a JavaScript program that accepts a number as input and inserts dashes (-) between each even number. For example if you accept 025468 the output should be 0-254-6-8.
+function insertDashes(number){
+    const table = Array.from(String(number), Number);
+    let arrayDashes = [];
+    for (let i = 0; i < table.length; i++) {
+        (table[i-1] % 2 === 0) && (table[i] % 2 === 0) ? arrayDashes.push('-',table[i].toString()): arrayDashes.push(table[i].toString());
+        
+    }
+    console.log(table);
+    console.log(arrayDashes.join(''))
+}
+insertDashes(254680);
