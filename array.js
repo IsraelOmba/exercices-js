@@ -54,3 +54,18 @@ function insertDashes(number){
     console.log(arrayDashes.join(''))
 }
 insertDashes(254680);
+
+// question 6 : Write a JavaScript program to compute the sum and product of an array of integers.
+function sumAndProductArray(table){
+    const mytable = table;
+    let sum = 0
+    let product = 1;
+    for (let i = 0; i < mytable.length; i++){
+        sum += mytable[i];
+        product *= mytable[i];
+    }
+    console.log("la somme du tableau vaut:" + sum);
+    console.log("le produit du tableau vaut:" + product);
+}
+const ourTable = [2,5,4,6,8,0];
+sumAndProductArray(ourTable);
