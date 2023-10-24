@@ -71,40 +71,86 @@ const ourTable = [2,5,4,6,8,0];
 sumAndProductArray(ourTable);
 
 // question 7 : Write a JavaScript program to sort the items of an array.
-function sortArray(table){
-    const myTable = table;
+// function sortArray(table){
+//     const myTable = table;
 
-    let contientNumerique = false;
-    let contientChaine = false;
+//     let contientNumerique = false;
+//     let contientChaine = false;
   
-    for (let i = 0; i < myTable.length; i++) {
-      if (typeof myTable[i] === 'number') {
-        contientNumerique = true;
-      } else if (typeof myTable[i] === 'string') {
-        contientChaine = true;
-      }
+//     for (let i = 0; i < myTable.length; i++) {
+//       if (typeof myTable[i] === 'number') {
+//         contientNumerique = true;
+//       } else if (typeof myTable[i] === 'string') {
+//         contientChaine = true;
+//       }
   
-      // Si les deux types sont déjà détectés, on peut sortir de la boucle
-      if (contientNumerique && contientChaine) {
-        break;
-      }
-    }
+//       // Si les deux types sont déjà détectés, on peut sortir de la boucle
+//       if (contientNumerique && contientChaine) {
+//         break;
+//       }
+//     }
   
-    if (contientNumerique && contientChaine) {
-      console.log("Le tableau contient à la fois des éléments numériques et des chaînes.");
-    }
-    else if (contientNumerique) {
-        myTable.sort((a,b) => a-b);
-    }
-    else if (contientChaine) {
-        myTable.sort((a,b) => a.localeCompare(b));
-    }
-    else {
-      console.log("Le tableau est vide ou ne contient aucun élément.");
-    }
+//     if (contientNumerique && contientChaine) {
+//       console.log("Le tableau contient à la fois des éléments numériques et des chaînes.");
+//     }
+//     else if (contientNumerique) {
+//         myTable.sort((a,b) => a-b);
+//     }
+//     else if (contientChaine) {
+//         myTable.sort((a,b) => a.localeCompare(b));
+//     }
+//     else {
+//       console.log("Le tableau est vide ou ne contient aucun élément.");
+//     }
     
-    console.log(myTable);
+//     console.log(myTable);
+// }
+// const tbl1 =[89,9,5,34,2,8,1,21];
+// const tbl2 =["omba","pembe","ekete","oshisha"];
+// sortArray(tbl1);
+// sortArray(tbl2);
+
+
+
+// // question 7 : Write a JavaScript program to find the most frequent item in an array
+// function frequentItemArray(){
+//   // Créer un objet pour compter les occurrences de chaque élément
+//   const occurrences = {};
+
+//   // Parcourir le tableau et compter les occurrences de chaque élément
+//   for (let i = 0; i < tableau.length; i++) {
+//     const element = tableau[i];
+//     occurrences[element] = occurrences[element] ? occurrences[element] + 1 : 1;
+//   }
+
+//   // Trouver l'élément le plus fréquent
+//   let elementPlusFrequent;
+//   let frequenceMax = 0;
+
+//   for (const element in occurrences) {
+//     if (occurrences[element] > frequenceMax) {
+//       elementPlusFrequent = element;
+//       frequenceMax = occurrences[element];
+//     }
+//   }
+
+//   return elementPlusFrequent;
+// }
+// const monTableau = [1, 2, 3, 2, 4, 2, 5, 3, 2];
+// const elementPlusFrequent = trouverElementPlusFrequent(monTableau);
+
+// console.log("L'élément le plus fréquent dans le tableau est : " + elementPlusFrequent);
+
+// question 8 : Write a JavaScript program that accepts a string as input and swaps the case of each character. For example if you input 'The Quick Brown Fox' the output should be 'tHE qUICK bROWN fOX'.
+function swapCasecaractere(text){
+  let tableCaractere = text.split('');
+  for (let i = 0; i < tableCaractere.length; i++) {
+    tableCaractere[i] === tableCaractere[i].toUpperCase() ? tableCaractere[i] = tableCaractere[i].toLowerCase() : tableCaractere[i] = tableCaractere[i].toUpperCase();
+
+  }
+  const swapCase = tableCaractere.join('');
+  console.log(swapCase);
+
 }
-const tbl =[89,9,5,34,2,8,1,21];
-// const tbl =["omba","pembe","ekete","oshisha"];
-sortArray(tbl);
+const mySentence = "Je suis un apprenant de KADEA ACADEMIE !";
+swapCasecaractere(mySentence);
